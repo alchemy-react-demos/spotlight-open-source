@@ -1,3 +1,4 @@
+import { FormControl, InputLabel, MenuItem, Select } from '@mui/material';
 import { useState } from 'react';
 import { XAxis, YAxis, Tooltip, Bar, BarChart } from 'recharts';
 
@@ -10,6 +11,20 @@ export default function ColorChart() {
   const [dataKey, setDataKey] = useState('pv');
   return (
     <>
+      <FormControl fullWidth>
+        <InputLabel id="demo-simple-select-label">Data Key</InputLabel>
+        <Select
+          labelId="demo-simple-select-label"
+          id="demo-simple-select"
+          value={dataKey}
+          label="Data Key"
+          onChange={(e) => setDataKey(e.target.value)}
+        >
+          <MenuItem value="uv">uv</MenuItem>
+          <MenuItem value="pv">pv</MenuItem>
+          <MenuItem value="amt">amt</MenuItem>
+        </Select>
+      </FormControl>
       <select value={dataKey} onChange={(e) => setDataKey(e.target.value)}>
         <option value="uv">uv</option>
         <option value="pv">pv</option>
