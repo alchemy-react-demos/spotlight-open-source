@@ -1,5 +1,6 @@
 import { Link, Route, Switch } from 'react-router-dom';
 import './App.css';
+import ColorChart from './components/ColorChart';
 
 function App() {
   return (
@@ -14,6 +15,7 @@ function App() {
         </Route>
         <Route path="/charts">
           <h1>Chart Library</h1>
+          <ColorChart />
         </Route>
       </Switch>
     </div>
